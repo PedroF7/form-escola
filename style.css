@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    width: 100vw;
+    height: 100vh;
+    font-family: "Poppins";
+    background-color: 0A0A0A;
+}
+
+main{
+    width: 100vw;
+    height: vh;
+    background-image: url(bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.area-form{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    padding: 48px 72px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 88px;
+    flex-shrink: 0;
+}
+
+
+.area-text1{
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+    gap: 5px;
+    flex: 1 0 0;
+    border-radius: 8px;
+    border: 1px solid var(--outline-default, #3F3F46);
+}
+
+input{
+    outline: none;
+    background: transparent;
+    border: none;
+    height: 35px;
+    width: 250px;
+    color: white;
+    font-family: "Poppins";
+}
+
+form {
+    max-width: 350px;
+    max-height: 509px;
+    padding: 48px 72px;
+    border-radius: 20px;
+    border: 1px solid rgba(186, 186, 186, 0.50);
+    background: var(--background-mode, rgba(19, 19, 22, 0.80));
+    box-shadow: 20px 40px 60px 0px rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(50px);
+}
+
+@media screen and (min-width:720px) {
+    form {
+        max-width: 628px;
+    }
+}
+
+
+.area-h1{
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    align-self: stretch;
+}
+
+h1{
+    color: var(--foreground-high, #FAFAFA);
+    /* heading */
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 28px */
+}
+
+h2{
+    color: var(--foreground-default, #D1D1D6);
+
+    /* body/large/regular */
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 16px */
+    text-transform: capitalize;
+}
+
+.area-text{
+    display: flex;
+    height: 82px;
+    padding: 15px;
+    gap: 5px;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1px solid var(--outline-default, #3F3F46);
+}
+
+textarea{
+    border-radius: 8px;
+    outline: none;
+    height: 82px;
+    background: transparent;
+    resize: none;
+    border: none;
+    color: white;
+    font-family: "Poppins";
+}
+
+.area-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    align-self: stretch;
+    
+}
+
+button{
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    background: var(--container-primary, #1570EF);
+    width: 480px;
+    padding: 16px;
+    color: var(--foreground-onColor, #FCFCFC);
+}
