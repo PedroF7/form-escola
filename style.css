@@ -62,7 +62,6 @@ form {
     border: 1px solid rgba(186, 186, 186, 0.50);
     background: var(--background-mode, rgba(19, 19, 22, 0.80));
     box-shadow: 20px 40px 60px 0px rgba(0, 0, 0, 0.50);
-    backdrop-filter: blur(50px);
 }
 
 @media screen and (min-width:720px) {
