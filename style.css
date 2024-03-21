@@ -1,19 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body, html{
-    width: 100vw;
-    height: 100vh;
+body, html {
+    width: 100%;
+    height: 100%;
     font-family: "Poppins";
-    background-color: 0A0A0A;
+    background-color: #0A0A0A;
 }
 
-main{
-    width: 100vw;
-    height: vh;
+main {
+    width: 100%;
+    height: 100%;
     background-image: url(bg.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -21,97 +21,109 @@ main{
     background-position: center center;
 }
 
-.area-form{
+.area-form {
     display: flex;
-    width: 100vw;
-    height: 100vh;
-    padding: 48px 72px;
+    width: 100%;
+    height: 100%;
+    padding: 15px; /* Alterei o padding para se ajustar melhor em telas menores */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 88px;
-    flex-shrink: 0;
+    gap: 2px; /* Reduzi o espaço entre os elementos em telas menores */
 }
 
-
-.area-text1{
-    display: flex;
-    padding: 12px 16px;
-    align-items: center;
-    gap: 5px;
-    flex: 1 0 0;
-    border-radius: 8px;
-    border: 1px solid var(--outline-default, #3F3F46);
-}
-
-input{
-    outline: none;
-    background: transparent;
-    border: none;
-    height: 35px;
-    width: 250px;
-    color: white;
+input,
+textarea,
+button {
     font-family: "Poppins";
+    z-index: 999;
+    width: 100%; /* Faz os campos de entrada e botões ocuparem toda a largura do contêiner */
+    max-width: 350px; /* Define um limite máximo de largura */
 }
 
 form {
-    max-width: 350px;
-    max-height: 509px;
-    padding: 48px 72px;
+    width: 100%;
+    max-width: 500px; /* Aumentei o máximo para telas maiores */
+    padding: 48px 24px; /* Alterei o padding para se ajustar melhor em telas menores */
     border-radius: 20px;
     border: 1px solid rgba(186, 186, 186, 0.50);
-    background: var(--background-mode, rgba(19, 19, 22, 0.80));
+    background: rgba(19, 19, 22, 0.80);
     box-shadow: 20px 40px 60px 0px rgba(0, 0, 0, 0.50);
 }
 
-@media screen and (min-width:720px) {
-    form {
-        max-width: 628px;
+@media screen and (min-width: 720px) {
+    .area-form {
+        padding: 48px 72px; /* Restaurei o padding original para telas maiores */
     }
 }
 
+.area-h1,
+.area-text,
+.area-button {
+    z-index: 999;
+    width: 100%;
+    max-width: 350px; /* Define um limite máximo de largura */
+}
 
-.area-h1{
+.area-h1 {
     display: flex;
     flex-direction: column;
     gap: 23px;
     align-self: stretch;
 }
 
-h1{
-    color: var(--foreground-high, #FAFAFA);
+h1 {
+    color: #FAFAFA;
     /* heading */
     font-size: 28px;
     font-style: normal;
+    z-index: 999;
     font-weight: 600;
     line-height: 100%; /* 28px */
 }
 
-h2{
-    color: var(--foreground-default, #D1D1D6);
-
+h2 {
+    color: #D1D1D6;
     /* body/large/regular */
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
+    z-index: 999;
     line-height: 100%; /* 16px */
     text-transform: capitalize;
 }
 
-.area-text{
+.area-text {
     display: flex;
-    height: 82px;
+    height: 85px;
     padding: 15px;
     gap: 5px;
     align-self: stretch;
+    z-index: 999;
     border-radius: 8px;
-    border: 1px solid var(--outline-default, #3F3F46);
+    border: 1px solid #3F3F46;
 }
 
-textarea{
+.area-text1{
+    border-radius: 8px;
+    border: 1px solid #3F3F46; 
+    background: transparent;
+}
+
+input{
+    outline: none;
+    z-index: 999;
+    padding: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+textarea {
     border-radius: 8px;
     outline: none;
+    z-index: 999;
     height: 82px;
     background: transparent;
     resize: none;
@@ -120,22 +132,75 @@ textarea{
     font-family: "Poppins";
 }
 
-.area-button{
+.area-button {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
     align-self: stretch;
-    
 }
 
-button{
+button {
     border-radius: 8px;
+    z-index: 999;
     border: none;
     font-weight: bold;
     cursor: pointer;
-    background: var(--container-primary, #1570EF);
-    width: 480px;
+    background: #1570EF;
+    width: 100%; /* Faz o botão ocupar toda a largura disponível */
     padding: 16px;
-    color: var(--foreground-onColor, #FCFCFC);
+    color: #FCFCFC;
+}
+
+.form-box {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    background-color: #0A0A0A;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.form-box::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 200%;
+    background: linear-gradient(180deg, blue, red);
+    animation: animate 3s linear infinite;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.form-box::after {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    background-color: black;
+    inset: 5px;
+    border-radius: inherit;
+}
+
+@keyframes animate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.form-container {
+    padding: 48px 72px;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
